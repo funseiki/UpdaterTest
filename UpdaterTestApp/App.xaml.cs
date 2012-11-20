@@ -12,9 +12,15 @@ namespace UpdaterTestApp
     /// </summary>
     public partial class App : Application
     {
-        private void Application_Startup(object sender, StartupEventArgs e)
+        private MainWindow _mainWin;
+        public App()
         {
 
+        }
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            _mainWin = new MainWindow();
+            _mainWin.Show();
         }
     }
 }

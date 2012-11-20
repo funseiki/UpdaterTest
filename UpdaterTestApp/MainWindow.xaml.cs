@@ -9,19 +9,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace UpdaterTestApp
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class MainWindow : Window
     {
-        public Window1()
+        public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void autoUpdater_ReadyToBeInstalled(object sender, EventArgs e)
+        {
+            UpdateButton.Visibility = Visibility.Visible;
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            autoUpdater.InstallNow();
         }
     }
 }

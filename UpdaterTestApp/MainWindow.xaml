@@ -1,0 +1,24 @@
+﻿<Window x:Class="UpdaterTestApp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:wy="clr-namespace:wyDay.Controls;assembly=AutomaticUpdaterWPF"
+    Title="MainWindow" Height="300" Width="300">
+    <Grid>
+        <Button x:Name="UpdateButton"
+                Click="UpdateButton_Click"
+                Visibility="Collapsed"
+                Width="Auto"
+                Height="Auto"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                >Update Now</Button>
+        <wy:AutomaticUpdater Name="autoUpdater"
+                                     HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                     WaitBeforeCheckSecs="1800"
+                                     DaysBetweenChecks="0"
+                                     KeepHidden="True"
+                                     ReadyToBeInstalled="autoUpdater_ReadyToBeInstalled"
+                                     Visibility="Collapsed"
+                                     GUID="my-app" />
+    </Grid>
+</Window>

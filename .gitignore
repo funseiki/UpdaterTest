@@ -1,3 +1,4 @@
 /*.suo
 /UpdaterTestApp/bin/
-/UpdaterTestApp/bin/obj/
+/UpdaterTestApp/obj/
+/wyBuildProj/

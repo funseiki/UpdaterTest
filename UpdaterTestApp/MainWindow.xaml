@@ -4,7 +4,7 @@
     xmlns:wy="clr-namespace:wyDay.Controls;assembly=AutomaticUpdaterWPF"
     Title="MainWindow" Height="300" Width="300"
         Closed="Window_Closed">
-    <Grid>
+    <Grid Background="Blue">
         <Button x:Name="UpdateButton"
                 Click="UpdateButton_Click"
                 Visibility="Collapsed"

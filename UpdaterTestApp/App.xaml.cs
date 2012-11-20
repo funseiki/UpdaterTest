@@ -26,6 +26,20 @@ namespace UpdaterTestApp
             _mainWin = new MainWindow(autoUpdater);
             _mainWin.Show();
             updaterWindow.Show();
+            Exit += new ExitEventHandler(App_Exit);
+        }
+
+        private void CloseWindows()
+        {
+            if (updaterWindow != null)
+            {
+                updaterWindow.Close();
+                updaterWindow = null;
+            }
+        }
+        void App_Exit(object sender, ExitEventArgs e)
+        {
+            CloseWindows();
         }
 
         void autoUpdater_ClosingAborted(object sender, EventArgs e)
@@ -36,8 +50,6 @@ namespace UpdaterTestApp
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-           // _mainWin = new MainWindow();
-           // _mainWin.Show();
             updaterWindow = new UpdaterWindow();
             autoUpdater = updaterWindow.autoUpdater;
             if (!autoUpdater.ClosingForInstall)

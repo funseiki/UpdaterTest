@@ -13,13 +13,5 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 >Update Now</Button>
-        <wy:AutomaticUpdater Name="autoUpdater"
-                                     HorizontalAlignment="Right" VerticalAlignment="Top" 
-                                     WaitBeforeCheckSecs="1800"
-                                     DaysBetweenChecks="0"
-                                     KeepHidden="True"
-                                     ReadyToBeInstalled="autoUpdater_ReadyToBeInstalled"
-                                     Visibility="Collapsed"
-                                     GUID="my-app" />
     </Grid>
 </Window>

@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using wyDay.Controls;
 
 namespace UpdaterTestApp
 {
@@ -18,9 +19,20 @@ namespace UpdaterTestApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private AutomaticUpdater autoUpdater;
+        public MainWindow(AutomaticUpdater _au)
         {
             InitializeComponent();
+            autoUpdater = _au;
+            if (autoUpdater.UpdateStepOn == wyDay.Controls.UpdateStepOn.UpdateReadyToInstall)
+            {
+                autoUpdater_ReadyToBeInstalled(this, null);
+            }
+            else
+            {
+                autoUpdater.ReadyToBeInstalled += new EventHandler(autoUpdater_ReadyToBeInstalled);
+            }
+            
         }
 
         private void autoUpdater_ReadyToBeInstalled(object sender, EventArgs e)
